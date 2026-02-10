@@ -78,8 +78,8 @@ const Navbar = () => {
                                     transition={{ duration: 0.5, delay: 0.1 * index }}
                                     onClick={() => scrollToSection(link.id)}
                                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${activeSection === link.id
-                                            ? 'text-primary-400 bg-primary-500/10 glow-primary'
-                                            : 'text-gray-300 hover:text-primary-400 hover:bg-white/5'
+                                        ? 'text-primary-400 bg-primary-500/10 glow-primary'
+                                        : 'text-gray-300 hover:text-primary-400 hover:bg-white/5'
                                         }`}
                                 >
                                     {link.label}
@@ -96,8 +96,8 @@ const Navbar = () => {
                         className="hidden md:block"
                     >
                         <a
-                            href="/resume.pdf"
-                            download
+                            href={`${import.meta.env.BASE_URL}resume.pdf`}
+                            download="Ravivarman_Resume.pdf"
                             className="btn-outline text-sm"
                         >
                             Download Resume
@@ -129,16 +129,16 @@ const Navbar = () => {
                             key={link.id}
                             onClick={() => scrollToSection(link.id)}
                             className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${activeSection === link.id
-                                    ? 'text-primary-400 bg-primary-500/10 glow-primary'
-                                    : 'text-gray-300 hover:text-primary-400 hover:bg-white/5'
+                                ? 'text-primary-400 bg-primary-500/10 glow-primary'
+                                : 'text-gray-300 hover:text-primary-400 hover:bg-white/5'
                                 }`}
                         >
                             {link.label}
                         </button>
                     ))}
                     <a
-                        href="/resume.pdf"
-                        download
+                        href={`${import.meta.env.BASE_URL}resume.pdf`}
+                        download="Ravivarman_Resume.pdf"
                         className="block w-full text-center btn-outline mt-4"
                     >
                         Download Resume

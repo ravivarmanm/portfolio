@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOfficeBuilding, HiCalendar, HiLocationMarker, HiChevronDown } from 'react-icons/hi';
 import { fadeIn, staggerContainer } from '../utils/animations';
@@ -131,8 +132,8 @@ const Experience = () => {
                     className="text-center mt-16"
                 >
                     <a
-                        href="/resume.pdf"
-                        download
+                        href={`${import.meta.env.BASE_URL}resume.pdf`}
+                        download="Ravivarman_Resume.pdf"
                         className="btn-primary inline-flex items-center gap-2"
                     >
                         <svg

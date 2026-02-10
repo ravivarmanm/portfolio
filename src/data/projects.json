@@ -1,66 +1,65 @@
 [
     {
         "id": 1,
-        "title": "E-Commerce Platform",
-        "description": "A full-stack e-commerce platform with real-time inventory management, payment integration, and admin dashboard.",
-        "image": "/projects/ecommerce.jpg",
+        "title": "AI Nutrition Tracker",
+        "description": "Smart calorie tracking app using Natural Language Processing. Simply type 'I ate an apple' to get real-time macro analysis via Python & CalorieNinjas API.",
+        "image": "/projects/nutrition.jpg",
         "technologies": [
             "React",
-            "Node.js",
-            "MongoDB",
-            "Stripe",
-            "Tailwind CSS"
+            "Python Flask",
+            "CalorieNinjas API",
+            "Tailwind",
+            "Chart.js"
         ],
-        "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/ravivarmanm/ecommerce",
+        "liveUrl": "https://food-database-demo.vercel.app",
+        "githubUrl": "https://github.com/ravivarmanm/food-database",
         "featured": true
     },
     {
         "id": 2,
-        "title": "AI Task Manager",
-        "description": "Smart task management app with AI-powered prioritization and natural language processing for task creation.",
-        "image": "/projects/taskmanager.jpg",
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with product catalog, cart management, and secure payment processing.",
+        "image": "/projects/ecommerce.jpg",
         "technologies": [
             "React",
-            "TypeScript",
-            "OpenAI API",
-            "Firebase",
-            "Framer Motion"
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Stripe"
         ],
-        "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/ravivarmanm/ai-taskmanager",
+        "liveUrl": "https://ecommerce-demo.vercel.app",
+        "githubUrl": "https://github.com/ravivarmanm/ECommerce",
         "featured": true
     },
     {
         "id": 3,
-        "title": "Real-Time Chat Application",
-        "description": "WebSocket-based chat application with group chats, file sharing, and end-to-end encryption.",
-        "image": "/projects/chat.jpg",
+        "title": "Room Cleaning Service",
+        "description": "On-demand service booking application for scheduling home cleaning. Features user profiles, booking history, and admin panel.",
+        "image": "/projects/cleaning.jpg",
         "technologies": [
             "React",
-            "Socket.io",
-            "Express",
-            "PostgreSQL",
-            "Redis"
+            "Firebase",
+            "Tailwind CSS",
+            "Framer Motion"
         ],
-        "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/ravivarmanm/chat-app",
+        "liveUrl": "https://cleaning-service-demo.vercel.app",
+        "githubUrl": "https://github.com/ravivarmanm/Roomcleaningservices",
         "featured": true
     },
     {
         "id": 4,
-        "title": "Weather Dashboard",
-        "description": "Beautiful weather dashboard with forecasts, interactive maps, and location-based alerts.",
-        "image": "/projects/weather.jpg",
+        "title": "Family Tracker App",
+        "description": "Mobile application for family safety tracking with real-time geolocation sharing and geofencing alerts.",
+        "image": "/projects/tracker.jpg",
         "technologies": [
-            "React",
-            "Weather API",
-            "Mapbox",
-            "Chart.js"
+            "React Native",
+            "Google Maps API",
+            "Firebase",
+            "Redux"
         ],
-        "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/ravivarmanm/weather-dashboard",
-        "featured": false
+        "liveUrl": "https://play.google.com/store/apps/details?id=com.familytracker",
+        "githubUrl": "https://github.com/ravivarmanm/FamilyTrackerApp",
+        "featured": true
     },
     {
         "id": 5,

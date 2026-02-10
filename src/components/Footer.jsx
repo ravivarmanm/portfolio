@@ -34,8 +34,8 @@ const Footer = () => {
 
     const socialLinks = [
         { icon: FaGithub, url: 'https://github.com/ravivarmanm', label: 'GitHub' },
-        { icon: FaLinkedin, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-        { icon: FaTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
+        { icon: FaLinkedin, url: 'https://www.linkedin.com/in/ravivarman-m-00/', label: 'LinkedIn' },
+        // { icon: FaTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
     ];
 
     return (
@@ -98,10 +98,10 @@ const Footer = () => {
                         </div>
                         <p className="text-gray-400 text-sm">
                             <a
-                                href="mailto:your.email@example.com"
+                                href="mailto:ravivarmanm@outlook.com"
                                 className="hover:text-primary-400 transition-colors"
                             >
-                                your.email@example.com
+                                ravivarmanm@outlook.com
                             </a>
                         </p>
                     </div>
@@ -110,7 +110,7 @@ const Footer = () => {
                 {/* Bottom bar */}
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-sm flex items-center gap-2">
-                        © {currentYear} Your Name. Made with{' '}
+                        © {currentYear} Ravivarman. Made with{' '}
                         <FaHeart className="text-red-500 animate-pulse" /> using React & Tailwind CSS
                     </p>
                     <div className="flex gap-6 text-sm text-gray-500">
