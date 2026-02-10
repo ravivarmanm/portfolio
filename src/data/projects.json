@@ -1,0 +1,95 @@
+[
+    {
+        "id": 1,
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce platform with real-time inventory management, payment integration, and admin dashboard.",
+        "image": "/projects/ecommerce.jpg",
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Stripe",
+            "Tailwind CSS"
+        ],
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/yourusername/ecommerce",
+        "featured": true
+    },
+    {
+        "id": 2,
+        "title": "AI Task Manager",
+        "description": "Smart task management app with AI-powered prioritization and natural language processing for task creation.",
+        "image": "/projects/taskmanager.jpg",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "OpenAI API",
+            "Firebase",
+            "Framer Motion"
+        ],
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/yourusername/ai-taskmanager",
+        "featured": true
+    },
+    {
+        "id": 3,
+        "title": "Real-Time Chat Application",
+        "description": "WebSocket-based chat application with group chats, file sharing, and end-to-end encryption.",
+        "image": "/projects/chat.jpg",
+        "technologies": [
+            "React",
+            "Socket.io",
+            "Express",
+            "PostgreSQL",
+            "Redis"
+        ],
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/yourusername/chat-app",
+        "featured": true
+    },
+    {
+        "id": 4,
+        "title": "Weather Dashboard",
+        "description": "Beautiful weather dashboard with forecasts, interactive maps, and location-based alerts.",
+        "image": "/projects/weather.jpg",
+        "technologies": [
+            "React",
+            "Weather API",
+            "Mapbox",
+            "Chart.js"
+        ],
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/yourusername/weather-dashboard",
+        "featured": false
+    },
+    {
+        "id": 5,
+        "title": "Portfolio CMS",
+        "description": "Headless CMS for managing portfolio content with drag-and-drop interface and version control.",
+        "image": "/projects/cms.jpg",
+        "technologies": [
+            "Next.js",
+            "Strapi",
+            "GraphQL",
+            "AWS S3"
+        ],
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/yourusername/portfolio-cms",
+        "featured": false
+    },
+    {
+        "id": 6,
+        "title": "Fitness Tracker",
+        "description": "Mobile-responsive fitness tracking app with workout plans, progress charts, and social features.",
+        "image": "/projects/fitness.jpg",
+        "technologies": [
+            "React Native",
+            "Firebase",
+            "Redux",
+            "Chart.js"
+        ],
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/yourusername/fitness-tracker",
+        "featured": false
+    }
+]

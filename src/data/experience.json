@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "company": "Cognizant – Ace Hardware",
+        "position": "Associate",
+        "duration": "Oct 2024 - Present",
+        "location": "Chennai",
+        "description": "Leading development of OMS-related workflows and commerce integrations.",
+        "responsibilities": [
+            "Led development and extension of OMS-related workflows enabling automated transactional communications and improved operational visibility across order processing flows",
+            "Worked with OMS integrations supporting order routing and fulfillment flows across Order Management, Fulfillment, PLP, PDP, and Cart modules",
+            "Implemented API extensions and service integrations improving data exchange between commerce and OMS services",
+            "Designed and deployed the Yard-Rx module, delivering location-based product recommendations leveraging store and inventory context",
+            "Built scalable UI and workflow components supporting order summaries, offer handling, and checkout improvements, reducing customer confusion and abandonment",
+            "Collaborated with backend and OMS teams to improve handling of returns, cancellations, and order modification flows"
+        ],
+        "technologies": [
+            "React",
+            "JavaScript",
+            "OMS",
+            "REST APIs",
+            "Redux"
+        ]
+    },
+    {
+        "id": 2,
+        "company": "Cognizant – Ace Hardware",
+        "position": "Program Analyst",
+        "duration": "Aug 2023 - Sep 2024",
+        "location": "Chennai",
+        "description": "Developed reusable components and workflows supporting order and account experiences.",
+        "responsibilities": [
+            "Developed reusable components and workflows supporting order and account experiences, improving customer self-service capabilities",
+            "Implemented accessibility and interaction improvements across account and checkout experiences",
+            "Built scalable UI components including notification systems, store locator flows, and product interaction modules",
+            "Enhanced PDP and Cart experiences by optimizing API integration and improving data presentation responsiveness",
+            "Supported OMS-driven flows including purchase history, subscriptions, and customer order visibility"
+        ],
+        "technologies": [
+            "React",
+            "JavaScript",
+            "TypeScript",
+            "MUI",
+            "REST APIs"
+        ]
+    },
+    {
+        "id": 3,
+        "company": "Cognizant – Ace Hardware",
+        "position": "Program Analyst Trainee",
+        "duration": "Aug 2022 - Aug 2023",
+        "location": "Chennai",
+        "description": "Migrated legacy modules to React and improved UI components.",
+        "responsibilities": [
+            "Migrated legacy Backbone.js modules to React.js improving maintainability and scalability within KIBO platform",
+            "Supported UI modules related to account management, order history, subscriptions, and dynamic notifications",
+            "Improved responsiveness and accessibility across core commerce flows including PDP and Cart",
+            "Documented reusable components within Storybook for improved cross-team adoption and faster development"
+        ],
+        "technologies": [
+            "React",
+            "JavaScript",
+            "Backbone.js",
+            "Storybook",
+            "SCSS"
+        ]
+    },
+    {
+        "id": 4,
+        "company": "Room Cleaning Service Website",
+        "position": "Frontend Trainee",
+        "duration": "Jan 2022 - Apr 2022",
+        "location": "Remote",
+        "description": "Built a responsive booking and service discovery platform.",
+        "responsibilities": [
+            "Built a responsive booking and service discovery platform using HTML, CSS, JavaScript, jQuery, and Bootstrap",
+            "Improved user engagement through optimized booking flows and device compatibility improvements"
+        ],
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "jQuery",
+            "Bootstrap"
+        ]
+    }
+]
