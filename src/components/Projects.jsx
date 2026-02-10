@@ -36,8 +36,8 @@ const Projects = () => {
                     <button
                         onClick={() => setFilter('all')}
                         className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${filter === 'all'
-                                ? 'bg-primary-500 text-white glow-primary'
-                                : 'glass text-gray-300 hover:text-primary-400'
+                            ? 'bg-primary-500 text-white glow-primary'
+                            : 'glass text-gray-300 hover:text-primary-400'
                             }`}
                     >
                         All Projects
@@ -45,8 +45,8 @@ const Projects = () => {
                     <button
                         onClick={() => setFilter('featured')}
                         className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${filter === 'featured'
-                                ? 'bg-primary-500 text-white glow-primary'
-                                : 'glass text-gray-300 hover:text-primary-400'
+                            ? 'bg-primary-500 text-white glow-primary'
+                            : 'glass text-gray-300 hover:text-primary-400'
                             }`}
                     >
                         Featured
@@ -161,7 +161,7 @@ const Projects = () => {
                     className="text-center mt-12"
                 >
                     <a
-                        href="https://github.com/yourusername"
+                        href="https://github.com/ravivarmanm"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-outline inline-flex items-center gap-2"

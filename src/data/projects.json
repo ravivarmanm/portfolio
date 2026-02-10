@@ -12,7 +12,7 @@
             "Tailwind CSS"
         ],
         "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/yourusername/ecommerce",
+        "githubUrl": "https://github.com/ravivarmanm/ecommerce",
         "featured": true
     },
     {
@@ -28,7 +28,7 @@
             "Framer Motion"
         ],
         "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/yourusername/ai-taskmanager",
+        "githubUrl": "https://github.com/ravivarmanm/ai-taskmanager",
         "featured": true
     },
     {
@@ -44,7 +44,7 @@
             "Redis"
         ],
         "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/yourusername/chat-app",
+        "githubUrl": "https://github.com/ravivarmanm/chat-app",
         "featured": true
     },
     {
@@ -59,7 +59,7 @@
             "Chart.js"
         ],
         "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/yourusername/weather-dashboard",
+        "githubUrl": "https://github.com/ravivarmanm/weather-dashboard",
         "featured": false
     },
     {
@@ -74,7 +74,7 @@
             "AWS S3"
         ],
         "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/yourusername/portfolio-cms",
+        "githubUrl": "https://github.com/ravivarmanm/portfolio-cms",
         "featured": false
     },
     {
@@ -89,7 +89,7 @@
             "Chart.js"
         ],
         "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/yourusername/fitness-tracker",
+        "githubUrl": "https://github.com/ravivarmanm/fitness-tracker",
         "featured": false
     }
 ]

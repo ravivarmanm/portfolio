@@ -33,7 +33,7 @@ const Footer = () => {
     ];
 
     const socialLinks = [
-        { icon: FaGithub, url: 'https://github.com/yourusername', label: 'GitHub' },
+        { icon: FaGithub, url: 'https://github.com/ravivarmanm', label: 'GitHub' },
         { icon: FaLinkedin, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
         { icon: FaTwitter, url: 'https://twitter.com/yourusername', label: 'Twitter' },
     ];
