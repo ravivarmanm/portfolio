@@ -2,9 +2,9 @@
 // Sign up at https://www.emailjs.com/ to get your credentials
 
 export const emailConfig = {
-    serviceId: 'service_255he8x', // Replace with your EmailJS service ID
-    templateId: 'template_dg9cevb', // Replace with your EmailJS template ID
-    publicKey: 'a4SrXZz-psC_NfeUU', // Replace with your EmailJS public key
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
 
 // Template variables that will be sent:
