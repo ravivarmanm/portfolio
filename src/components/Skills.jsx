@@ -1,19 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion';
-import {
-    FaReact, FaNodeJs, FaHtml5, FaJs, FaGitAlt, FaServer,
-    FaCss3Alt, FaSass, FaMobile, FaNpm, FaChrome, FaJira
-} from 'react-icons/fa';
-import {
-    SiTypescript, SiExpress, SiMui, SiRedux, SiStorybook, SiPostman
-} from 'react-icons/si';
 import { fadeIn, staggerContainer } from '../utils/animations';
 import skillsData from '../data/skills.json';
-
-const iconMap = {
-    FaReact, FaNodeJs, FaHtml5, FaJs, FaGitAlt, FaServer,
-    FaCss3Alt, FaSass, FaMobile, FaNpm, FaChrome, FaJira,
-    SiTypescript, SiExpress, SiMui, SiRedux, SiStorybook, SiPostman
-};
 
 const Skills = () => {
     return (
@@ -33,86 +21,60 @@ const Skills = () => {
                     <p className="section-subtitle">Tools and technologies I work with</p>
                 </motion.div>
 
-                <div className="space-y-12">
-                    {skillsData.categories.map((category, categoryIndex) => (
-                        <motion.div
-                            key={category.name}
-                            variants={fadeIn('up', categoryIndex * 0.1)}
-                            className="glass rounded-2xl p-8"
-                        >
-                            <h3 className="text-2xl font-bold text-primary-400 mb-6 flex items-center gap-3">
-                                <span className="w-2 h-8 bg-gradient-to-b from-primary-500 to-secondary-500 rounded-full"></span>
-                                {category.name}
-                            </h3>
-
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                                {category.skills.map((skill, skillIndex) => {
-                                    const IconComponent = iconMap[skill.icon];
-
-                                    return (
-                                        <motion.div
-                                            key={skill.name}
-                                            initial={{ opacity: 0, scale: 0.5 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: skillIndex * 0.05 }}
-                                            whileHover={{ scale: 1.1, y: -5 }}
-                                            className="group"
-                                        >
-                                            <div className="glass-strong rounded-xl p-6 text-center transition-all duration-300 hover:glow-primary cursor-pointer">
-                                                <div className="flex justify-center mb-4">
-                                                    {IconComponent && (
-                                                        <IconComponent
-                                                            className="text-5xl text-primary-400 group-hover:text-primary-300 transition-colors"
-                                                        />
-                                                    )}
-                                                </div>
-                                                <h4 className="text-sm font-semibold text-gray-200 mb-2">
-                                                    {skill.name}
-                                                </h4>
-
-                                                {/* Skill level bar */}
-                                                <div className="w-full bg-dark-800 rounded-full h-2 overflow-hidden">
-                                                    <motion.div
-                                                        initial={{ width: 0 }}
-                                                        whileInView={{ width: `${skill.level}%` }}
-                                                        viewport={{ once: true }}
-                                                        transition={{ duration: 1, delay: skillIndex * 0.05 }}
-                                                        className="h-full bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    );
-                                })}
+                <motion.div variants={fadeIn('up', 0.2)} className="max-w-5xl mx-auto">
+                    <div className="glass-strong rounded-xl border border-white/5 overflow-hidden font-mono text-sm shadow-2xl">
+                        {/* Terminal Header */}
+                        <div className="h-10 bg-white/5 border-b border-white/5 flex items-center px-4 justify-between">
+                            <div className="flex space-x-2">
+                                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                             </div>
-                        </motion.div>
-                    ))}
-                </div>
+                            <div className="text-gray-500 text-xs">skills.json — readonly</div>
+                            <div className="w-16"></div>
+                        </div>
 
-                {/* Additional Skills/Interests */}
-                <motion.div
-                    variants={fadeIn('up', 0.4)}
-                    className="mt-12 text-center"
-                >
-                    <div className="glass rounded-2xl p-8 inline-block">
-                        <h3 className="text-xl font-semibold text-gray-300 mb-4">
-                            Also interested in
-                        </h3>
-                        <div className="flex flex-wrap justify-center gap-3">
-                            {['Next.js', 'Performance Optimization', 'Testing (Jest/RTL)', 'Accessibility', 'Web Animations', 'PWA'].map((interest, index) => (
-                                <motion.span
-                                    key={interest}
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    whileHover={{ scale: 1.1 }}
-                                    className="px-4 py-2 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 border border-primary-500/30 rounded-full text-sm text-gray-300 hover:border-primary-500 transition-all cursor-default"
-                                >
-                                    {interest}
-                                </motion.span>
-                            ))}
+                        {/* Terminal Content */}
+                        <div className="p-6 md:p-8 bg-black/50 text-gray-300 overflow-x-auto scrollbar-custom">
+                            <div className="leading-relaxed">
+                                <span className="text-purple-400">const</span> <span className="text-yellow-300">developer</span> <span className="text-white">=</span> <span className="text-purple-400">{`{`}</span>
+                                <br />
+                                <div className="pl-4 md:pl-8">
+                                    <span className="text-blue-300">name</span>: <span className="text-green-400">'Ravivarman M'</span>,
+                                    <br />
+                                    <span className="text-blue-300">role</span>: <span className="text-green-400">'Full Stack Developer'</span>,
+                                    <br />
+                                    <span className="text-blue-300">skills</span>: <span className="text-purple-400">{`{`}</span>
+                                    <br />
+
+                                    {skillsData.categories.map((category, index) => (
+                                        <div key={category.name} className="pl-4 md:pl-8 py-1 group hover:bg-white/5 rounded transition-colors">
+                                            <span className="text-blue-300">{category.name.toLowerCase().replace(/\s+/g, '_')}</span>: <span className="text-purple-400">[</span>
+                                            <br />
+                                            <div className="pl-4 md:pl-8 flex flex-wrap gap-2 py-1">
+                                                {category.skills.map((skill, i) => (
+                                                    <span key={skill.name} className="text-green-400 hover:text-green-300 transition-colors cursor-default">
+                                                        '{skill.name}'{i < category.skills.length - 1 ? ',' : ''}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <span className="text-purple-400">]{index < skillsData.categories.length - 1 ? ',' : ''}</span>
+                                            <span className="text-gray-600 text-xs ml-4 opacity-0 group-hover:opacity-100 transition-opacity">// {category.skills.length} items</span>
+                                        </div>
+                                    ))}
+
+                                    <span className="text-purple-400">{`}`}</span>,
+                                    <br />
+                                    <span className="text-blue-300">passions</span>: <span className="text-purple-400">[</span>
+                                    <br />
+                                    <div className="pl-4 md:pl-8">
+                                        <span className="text-green-400">'Clean Code'</span>, <span className="text-green-400">'UI/UX'</span>, <span className="text-green-400">'Optimization'</span>, <span className="text-green-400">'Coffee'</span>
+                                    </div>
+                                    <span className="text-purple-400">]</span>
+                                </div>
+                                <span className="text-purple-400">{`}`}</span>;
+                                <span className="animate-pulse inline-block w-2.5 h-5 bg-primary-400 ml-1 align-middle"></span>
+                            </div>
                         </div>
                     </div>
                 </motion.div>
