@@ -66,15 +66,15 @@ const Projects = () => {
                                 <div className="glass-strong rounded-2xl overflow-hidden border border-white/5 hover:border-primary-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,204,240,0.1)] h-full flex flex-col relative">
                                     {/* Project visualization */}
                                     <div className="relative h-48 bg-black overflow-hidden group-hover:glow-primary-sm transition-all duration-500">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 to-secondary-900/20"></div>
+                                        {/* Project Image */}
+                                        <img
+                                            src={project.image.startsWith('http') ? project.image : `${import.meta.env.BASE_URL}${project.image.startsWith('/') ? project.image.slice(1) : project.image}`}
+                                            alt={project.title}
+                                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
 
-                                        {/* Mockup / Image Placeholder */}
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="text-center opacity-30 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105">
-                                                <HiCode className="text-6xl text-primary-500 mx-auto mb-2" />
-                                                <span className="text-xs font-mono text-primary-400">PROJECT_PREVIEW</span>
-                                            </div>
-                                        </div>
+                                        {/* Gradient Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/40 to-secondary-900/40 group-hover:opacity-60 transition-opacity duration-300"></div>
 
                                         {/* Overlay Actions */}
                                         <div className="absolute inset-0 bg-black/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
