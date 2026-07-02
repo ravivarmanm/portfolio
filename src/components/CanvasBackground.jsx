@@ -12,55 +12,47 @@ const CanvasBackground = () => {
 
         let animationFrameId;
         let particles = [];
-        const mouse = { x: null, y: null, radius: 150 };
+        const mouse = { x: null, y: null, radiusSq: 22500 }; // 150^2 (pre-calculated squared radius)
 
+        let resizeTimeout;
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             initParticles();
         };
 
+        const debouncedResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resizeCanvas, 150);
+        };
+
         class Particle {
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                this.baseX = x;
-                this.baseY = y;
                 this.size = Math.random() * 2 + 1;
                 this.vx = (Math.random() - 0.5) * 0.4;
                 this.vy = (Math.random() - 0.5) * 0.4;
                 this.density = (Math.random() * 30) + 1;
             }
 
-            draw() {
-                ctx.fillStyle = 'rgba(139, 92, 246, 0.4)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.closePath();
-                ctx.fill();
-            }
-
             update() {
-                // Regular drift
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Bounce off edges
                 if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
                 if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
 
-                // Mouse interaction (repel)
-                if (mouse.x != null && mouse.y != null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    let forceDirectionX = dx / distance;
-                    let forceDirectionY = dy / distance;
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const distSq = dx * dx + dy * dy;
                     
-                    if (distance < mouse.radius) {
-                        let force = (mouse.radius - distance) / mouse.radius;
-                        let directionX = forceDirectionX * force * this.density * 0.5;
-                        let directionY = forceDirectionY * force * this.density * 0.5;
+                    if (distSq < mouse.radiusSq) {
+                        const distance = Math.sqrt(distSq); // Only calculate sqrt if within interaction boundary
+                        const force = (150 - distance) / 150;
+                        const directionX = (dx / distance) * force * this.density * 0.5;
+                        const directionY = (dy / distance) * force * this.density * 0.5;
                         this.x -= directionX;
                         this.y -= directionY;
                     }
@@ -70,29 +62,38 @@ const CanvasBackground = () => {
 
         const initParticles = () => {
             particles = [];
-            // Calibrate particle density based on screen area
-            const numberOfParticles = Math.min(Math.floor((canvas.width * canvas.height) / 11000), 120);
+            // Cap particle count strictly based on screen area to guarantee 60 FPS
+            const densityFactor = 15000;
+            const targetCount = Math.floor((canvas.width * canvas.height) / densityFactor);
+            const numberOfParticles = Math.min(targetCount, 80); // Cap at 80 particles max for scale
+
             for (let i = 0; i < numberOfParticles; i++) {
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height;
-                particles.push(new Particle(x, y));
+                particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
             }
         };
 
         const connectParticles = () => {
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    const dx = particles[a].x - particles[b].x;
-                    const dy = particles[a].y - particles[b].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+            const limitSq = 14400; // 120^2 (pre-calculated connection limit squared)
+            
+            // Set style once per frame to minimize canvas state switches
+            ctx.lineWidth = 1;
 
-                    if (distance < 120) {
-                        const alpha = (120 - distance) / 120 * 0.15;
+            const len = particles.length;
+            for (let a = 0; a < len; a++) {
+                const pA = particles[a];
+                for (let b = a + 1; b < len; b++) {
+                    const pB = particles[b];
+                    const dx = pA.x - pB.x;
+                    const dy = pA.y - pB.y;
+                    const distSq = dx * dx + dy * dy;
+
+                    if (distSq < limitSq) {
+                        const distance = Math.sqrt(distSq); // Only run sqrt on connections that will draw
+                        const alpha = (120 - distance) * 0.00125; // Pre-calculated division multiplier (1/120 * 0.15 = 0.00125)
                         ctx.strokeStyle = `rgba(139, 92, 246, ${alpha})`;
-                        ctx.lineWidth = 1;
                         ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.moveTo(pA.x, pA.y);
+                        ctx.lineTo(pB.x, pB.y);
                         ctx.stroke();
                     }
                 }
@@ -101,10 +102,20 @@ const CanvasBackground = () => {
 
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach((particle) => {
+            
+            // Single style setting for all particle fills
+            ctx.fillStyle = 'rgba(139, 92, 246, 0.4)';
+            ctx.beginPath();
+            
+            const len = particles.length;
+            for (let i = 0; i < len; i++) {
+                const particle = particles[i];
                 particle.update();
-                particle.draw();
-            });
+                ctx.moveTo(particle.x + particle.size, particle.y);
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            }
+            ctx.fill();
+            
             connectParticles();
             animationFrameId = requestAnimationFrame(animate);
         };
@@ -119,7 +130,7 @@ const CanvasBackground = () => {
             mouse.y = null;
         };
 
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', debouncedResize);
         window.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseleave', handleMouseLeave);
 
@@ -128,7 +139,8 @@ const CanvasBackground = () => {
 
         return () => {
             cancelAnimationFrame(animationFrameId);
-            window.removeEventListener('resize', resizeCanvas);
+            clearTimeout(resizeTimeout);
+            window.removeEventListener('resize', debouncedResize);
             window.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseleave', handleMouseLeave);
         };

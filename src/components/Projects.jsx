@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { HiExternalLink, HiCode, HiEye } from 'react-icons/hi';
 import { fadeIn, staggerContainer } from '../utils/animations';
 import projectsData from '../data/projects.json';
@@ -8,9 +8,11 @@ import projectsData from '../data/projects.json';
 const Projects = () => {
     const [filter, setFilter] = useState('featured');
 
-    const filteredProjects = filter === 'featured'
-        ? projectsData.filter(project => project.featured)
-        : projectsData.filter(project => !project.featured);
+    const filteredProjects = useMemo(() => {
+        return filter === 'featured'
+            ? projectsData.filter(project => project.featured)
+            : projectsData.filter(project => !project.featured);
+    }, [filter]);
 
     return (
         <section id="projects" className="section bg-transparent relative overflow-hidden">
@@ -51,19 +53,22 @@ const Projects = () => {
                 </motion.div>
 
                 {/* Projects grid */}
-                <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <AnimatePresence>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <AnimatePresence mode="popLayout">
                         {filteredProjects.map((project, index) => (
                             <motion.div
-                                layout
                                 key={project.id}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
+                                initial={{ opacity: 0, y: 15 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -15 }}
+                                transition={{ duration: 0.2 }}
                                 className="group h-full"
                             >
-                                <div className="glass-strong rounded-2xl overflow-hidden border border-white/5 hover:border-violet-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.1)] h-full flex flex-col relative">
+                                <motion.div 
+                                    whileHover={{ y: -6, scale: 1.015 }}
+                                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                                    className="glass-strong rounded-2xl overflow-hidden border border-white/5 hover:border-violet-500/30 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] h-full flex flex-col relative"
+                                >
                                     {/* Project visualization */}
                                     <div className="relative h-48 bg-black overflow-hidden group-hover:glow-primary-sm transition-all duration-500">
                                         {/* Project Image */}
@@ -109,8 +114,10 @@ const Projects = () => {
 
                                     {/* Content */}
                                     <div className="p-6 flex-1 flex flex-col">
-                                        <h3 className="text-xl font-bold font-display text-white mb-2 group-hover:text-violet-400 transition-colors flex items-center gap-2">
-                                            {project.title}
+                                        <h3 className="text-xl font-bold font-display text-white mb-2 group-hover:translate-x-2 transition-all duration-300 flex items-center gap-2">
+                                            <span className="group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-violet-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                                                {project.title}
+                                            </span>
                                             <HiExternalLink className="text-gray-600 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 duration-300" />
                                         </h3>
 
@@ -138,11 +145,11 @@ const Projects = () => {
 
                                     {/* Bottom highlight line */}
                                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                </div>
+                                </motion.div>
                             </motion.div>
                         ))}
                     </AnimatePresence>
-                </motion.div>
+                </div>
 
                 {/* GitHub CTA */}
                 <motion.div
