@@ -99,7 +99,7 @@ const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="section bg-dark-900 relative overflow-hidden">
+        <section id="contact" className="section bg-transparent relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
@@ -118,11 +118,11 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Contact Information */}
                     <motion.div variants={fadeIn('right', 0.2)} className="space-y-8">
-                        <div className="glass rounded-2xl p-8">
-                            <h3 className="text-2xl font-bold text-primary-400 mb-6">
+                        <div className="glass rounded-2xl p-8 hover:border-violet-500/15 border border-white/5 transition-all duration-300">
+                            <h3 className="text-2xl font-bold font-display text-violet-400 mb-6">
                                 Let's talk about everything!
                             </h3>
-                            <p className="text-gray-400 mb-8 leading-relaxed">
+                            <p className="text-gray-400 mb-8 leading-relaxed text-justify">
                                 Have a project in mind or just want to chat? Feel free to reach out!
                                 I'm always open to discussing new projects, creative ideas, or
                                 opportunities to be part of your vision.
@@ -138,15 +138,15 @@ const Contact = () => {
                                         transition={{ delay: index * 0.1 }}
                                         className="flex items-center gap-4"
                                     >
-                                        <div className="w-12 h-12 rounded-lg bg-primary-500/10 flex items-center justify-center glow-primary">
-                                            <info.icon className="text-2xl text-primary-400" />
+                                        <div className="w-12 h-12 rounded-lg bg-violet-500/10 flex items-center justify-center glow-primary border border-violet-500/20">
+                                            <info.icon className="text-2xl text-violet-400" />
                                         </div>
                                         <div>
                                             <p className="text-sm text-gray-500">{info.label}</p>
                                             {info.href ? (
                                                 <a
                                                     href={info.href}
-                                                    className="text-gray-200 hover:text-primary-400 transition-colors"
+                                                    className="text-gray-200 hover:text-violet-400 transition-colors"
                                                 >
                                                     {info.value}
                                                 </a>
@@ -168,7 +168,7 @@ const Contact = () => {
                                             href={social.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="w-12 h-12 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-primary-400 hover:glass-strong transition-all glow-hover-primary"
+                                            className="w-12 h-12 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-violet-400 hover:glass-strong transition-all glow-hover-primary"
                                             aria-label={social.label}
                                         >
                                             <social.icon className="text-xl" />
@@ -181,9 +181,9 @@ const Contact = () => {
 
                     {/* Contact Form */}
                     <motion.div variants={fadeIn('left', 0.2)}>
-                        <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-6">
+                        <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-6 hover:border-violet-500/15 border border-white/5 transition-all duration-300">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2 font-display">
                                     Your Name
                                 </label>
                                 <input
@@ -199,7 +199,7 @@ const Contact = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2 font-display">
                                     Your Email
                                 </label>
                                 <input
@@ -215,7 +215,7 @@ const Contact = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2 font-display">
                                     Subject
                                 </label>
                                 <input
@@ -231,7 +231,7 @@ const Contact = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2 font-display">
                                     Message
                                 </label>
                                 <textarea
@@ -250,11 +250,11 @@ const Contact = () => {
                                 <motion.div
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className={`p-4 rounded-lg ${submitStatus.type === 'success'
+                                    className={`p-4 rounded-lg font-mono text-xs ${submitStatus.type === 'success'
                                         ? 'bg-green-500/10 border border-green-500/30 text-green-400'
                                         : submitStatus.type === 'error'
                                             ? 'bg-red-500/10 border border-red-500/30 text-red-400'
-                                            : 'bg-blue-500/10 border border-blue-500/30 text-blue-400'
+                                            : 'bg-violet-500/10 border border-violet-500/30 text-violet-400'
                                         }`}
                                 >
                                     {submitStatus.message}
@@ -264,7 +264,7 @@ const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed font-display"
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>

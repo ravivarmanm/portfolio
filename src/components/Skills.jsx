@@ -5,7 +5,7 @@ import skillsData from '../data/skills.json';
 
 const Skills = () => {
     return (
-        <section id="skills" className="section bg-dark-950 relative overflow-hidden">
+        <section id="skills" className="section bg-transparent relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-dots-pattern opacity-10"></div>
 
@@ -22,7 +22,7 @@ const Skills = () => {
                 </motion.div>
 
                 <motion.div variants={fadeIn('up', 0.2)} className="max-w-5xl mx-auto">
-                    <div className="glass-strong rounded-xl border border-white/5 overflow-hidden font-mono text-sm shadow-2xl">
+                    <div className="glass-strong rounded-xl border border-violet-500/10 hover:border-violet-500/20 overflow-hidden font-mono text-sm shadow-2xl transition-all duration-300">
                         {/* Terminal Header */}
                         <div className="h-10 bg-white/5 border-b border-white/5 flex items-center px-4 justify-between">
                             <div className="flex space-x-2">
@@ -48,12 +48,12 @@ const Skills = () => {
                                     <br />
 
                                     {skillsData.categories.map((category, index) => (
-                                        <div key={category.name} className="pl-4 md:pl-8 py-1 group hover:bg-white/5 rounded transition-colors">
+                                        <div key={category.name} className="pl-4 md:pl-8 py-1 group hover:bg-violet-500/5 hover:border-l-2 hover:border-violet-500 transition-all duration-150 rounded-r">
                                             <span className="text-blue-300">{category.name.toLowerCase().replace(/\s+/g, '_')}</span>: <span className="text-purple-400">[</span>
                                             <br />
                                             <div className="pl-4 md:pl-8 flex flex-wrap gap-2 py-1">
                                                 {category.skills.map((skill, i) => (
-                                                    <span key={skill.name} className="text-green-400 hover:text-green-300 transition-colors cursor-default">
+                                                    <span key={skill.name} className="text-green-400 hover:text-violet-400 transition-colors cursor-default">
                                                         '{skill.name}'{i < category.skills.length - 1 ? ',' : ''}
                                                     </span>
                                                 ))}
@@ -73,7 +73,7 @@ const Skills = () => {
                                     <span className="text-purple-400">]</span>
                                 </div>
                                 <span className="text-purple-400">{`}`}</span>;
-                                <span className="animate-pulse inline-block w-2.5 h-5 bg-primary-400 ml-1 align-middle"></span>
+                                <span className="animate-pulse inline-block w-2.5 h-5 bg-violet-500 ml-1 align-middle"></span>
                             </div>
                         </div>
                     </div>

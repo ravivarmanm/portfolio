@@ -13,7 +13,7 @@ const Experience = () => {
     };
 
     return (
-        <section id="experience" className="section bg-dark-900 relative overflow-hidden">
+        <section id="experience" className="section bg-transparent relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
@@ -31,7 +31,7 @@ const Experience = () => {
 
                 <div className="relative">
                     {/* Timeline line */}
-                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary-500/50 to-transparent"></div>
+                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-violet-500/50 to-transparent"></div>
 
                     <div className="space-y-12">
                         {experienceData.map((job, index) => (
@@ -41,8 +41,8 @@ const Experience = () => {
                                 className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                             >
                                 {/* Timeline Dot */}
-                                <div className="absolute left-0 md:left-1/2 transform -translate-x-[5px] md:-translate-x-1/2 w-3 h-3 bg-dark-950 border border-primary-500 rounded-full z-10 mt-6 shadow-[0_0_10px_rgba(34,204,240,0.5)]">
-                                    <div className="absolute inset-0 bg-primary-500 rounded-full animate-ping opacity-20"></div>
+                                <div className="absolute left-0 md:left-1/2 transform -translate-x-[5px] md:-translate-x-1/2 w-3 h-3 bg-dark-950 border border-violet-500 rounded-full z-10 mt-6 shadow-[0_0_10px_rgba(139,92,246,0.5)]">
+                                    <div className="absolute inset-0 bg-violet-500 rounded-full animate-ping opacity-20"></div>
                                 </div>
 
                                 {/* Content Card */}
@@ -52,27 +52,27 @@ const Experience = () => {
                                         onClick={() => toggleExpand(job.id)}
                                         className="relative group cursor-pointer"
                                     >
-                                        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                                        <motion.div layout className="glass-strong rounded-xl p-6 border border-white/5 relative z-10 hover:border-primary-500/30 transition-colors">
+                                        <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-500/20 to-purple-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                                        <motion.div layout className="glass-strong rounded-xl p-6 border border-white/5 relative z-10 hover:border-violet-500/30 transition-colors">
                                             {/* Date Badge */}
-                                            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-xs font-mono text-primary-400 mb-4 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+                                            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs font-mono text-violet-400 mb-4 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                                                 <HiCalendar />
                                                 <span>{job.duration}</span>
                                             </div>
 
-                                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary-400 transition-colors">
+                                            <h3 className="text-xl font-bold font-display text-white mb-1 group-hover:text-violet-400 transition-colors">
                                                 {job.position}
                                             </h3>
 
                                             <div className={`flex items-center gap-2 text-gray-400 text-sm mb-4 font-mono ${index % 2 !== 0 ? 'md:justify-end' : ''}`}>
-                                                <HiOfficeBuilding className="text-secondary-400" />
+                                                <HiOfficeBuilding className="text-violet-400/80" />
                                                 <span>{job.company}</span>
                                                 <span className="text-gray-600">|</span>
-                                                <HiLocationMarker className="text-secondary-400" />
+                                                <HiLocationMarker className="text-violet-400/80" />
                                                 <span>{job.location}</span>
                                             </div>
 
-                                            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                            <p className="text-gray-400 text-sm leading-relaxed mb-4 text-justify">
                                                 {job.description}
                                             </p>
 
@@ -87,7 +87,7 @@ const Experience = () => {
                                                         <ul className={`space-y-2 mb-4 pt-4 border-t border-white/5 ${index % 2 !== 0 ? 'md:text-right' : 'text-left'}`}>
                                                             {job.responsibilities.map((responsibility, idx) => (
                                                                 <li key={idx} className={`flex items-start gap-2 text-sm text-gray-400 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                                                                    <span className="text-primary-400 mt-1">▹</span>
+                                                                    <span className="text-violet-400 mt-1">▹</span>
                                                                     <span>{responsibility}</span>
                                                                 </li>
                                                             ))}
@@ -107,7 +107,7 @@ const Experience = () => {
                                                 )}
                                             </AnimatePresence>
 
-                                            <div className={`mt-4 flex items-center gap-1 text-xs text-primary-400 font-mono opacity-50 justify-center group-hover:opacity-100 transition-opacity`}>
+                                            <div className={`mt-4 flex items-center gap-1 text-xs text-violet-400 font-mono opacity-50 justify-center group-hover:opacity-100 transition-opacity`}>
                                                 {expandedId === job.id ? 'Show Less' : 'Show Details'}
                                                 <motion.span
                                                     animate={{ rotate: expandedId === job.id ? 180 : 0 }}

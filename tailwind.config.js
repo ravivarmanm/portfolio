@@ -47,6 +47,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
       },
       animation: {
@@ -75,10 +76,10 @@ export default {
         },
         glow: {
           '0%': {
-            'box-shadow': '0 0 5px rgba(34, 204, 240, 0.5), 0 0 10px rgba(34, 204, 240, 0.3)',
+            'box-shadow': '0 0 5px rgba(139, 92, 246, 0.3), 0 0 10px rgba(139, 92, 246, 0.2)',
           },
           '100%': {
-            'box-shadow': '0 0 20px rgba(34, 204, 240, 0.8), 0 0 30px rgba(34, 204, 240, 0.5)',
+            'box-shadow': '0 0 20px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4)',
           },
         },
         slideUp: {

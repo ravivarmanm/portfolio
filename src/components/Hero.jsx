@@ -87,7 +87,7 @@ const Hero = () => {
                     y: mousePosition.y * -2,
                 }}
                 transition={{ type: 'spring', stiffness: 50, damping: 20 }}
-                className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl opacity-50"
+                className="absolute top-20 left-10 w-72 h-72 bg-violet-600/5 rounded-full blur-3xl opacity-50"
             />
             <motion.div
                 animate={{
@@ -95,7 +95,7 @@ const Hero = () => {
                     y: mousePosition.y * 2,
                 }}
                 transition={{ type: 'spring', stiffness: 50, damping: 20 }}
-                className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl opacity-50"
+                className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl opacity-50"
             />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -105,11 +105,11 @@ const Hero = () => {
                     animate="show"
                     className="mb-6 relative inline-block group"
                 >
-                    <div className="absolute inset-0 bg-white/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <h2 className="text-base md:text-lg text-primary-400 font-mono mb-2 relative z-10">
+                    <div className="absolute inset-0 bg-violet-600/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <h2 className="text-base md:text-lg text-violet-400 font-mono mb-2 relative z-10">
                         Hi, my name is
                     </h2>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 relative z-10">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display mb-4 relative z-10 tracking-tight">
                         <span
                             className="gradient-text-animated text-shadow-glow glitch-hover cursor-default"
                             data-text="M.RAVIVARMAN"
@@ -125,10 +125,10 @@ const Hero = () => {
                     animate="show"
                     className="mb-8"
                 >
-                    <div className="inline-block glass px-6 py-1 rounded-xl border glass-strong shadow-lg">
-                        <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold text-gray-300 h-16 md:h-20 flex items-center justify-center gap-2">
-                            I'm a <span className="text-primary-400">{displayText}</span>
-                            <span className="animate-pulse text-primary-400">|</span>
+                    <div className="inline-block glass px-6 py-1 rounded-xl border border-violet-500/10 shadow-lg">
+                        <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold text-gray-300 h-16 md:h-20 flex items-center justify-center gap-2 font-display">
+                            I'm a <span className="text-violet-400">{displayText}</span>
+                            <span className="animate-pulse text-violet-400">|</span>
                         </h2>
                     </div>
                 </motion.div>
@@ -153,14 +153,14 @@ const Hero = () => {
                         className="btn-primary group relative overflow-hidden"
                     >
                         <span className="relative z-10">View My Work</span>
-                        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </button>
                     <button
                         onClick={() => scrollToSection('contact')}
                         className="btn-outline group relative overflow-hidden"
                     >
                         <span className="relative z-10">Get In Touch</span>
-                        <div className="absolute inset-0 bg-primary-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        <div className="absolute inset-0 bg-violet-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </button>
                 </motion.div>
 
@@ -179,7 +179,7 @@ const Hero = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.2, y: -5 }}
                             whileTap={{ scale: 0.9 }}
-                            className="text-gray-400 hover:text-primary-400 transition-colors glow-hover-primary relative"
+                            className="text-gray-400 hover:text-violet-400 transition-colors glow-hover-primary relative"
                             aria-label={social.label}
                         >
                             <social.icon size={28} />
@@ -190,12 +190,12 @@ const Hero = () => {
                 <motion.div
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
-                    className="absolute  left-1/2 transform -translate-x-1/2"
+                    className="absolute left-1/2 transform -translate-x-1/2"
                     style={{ bottom: '-3.5rem' }}
                 >
                     <button
                         onClick={() => scrollToSection('about')}
-                        className="text-primary-400 hover:text-primary-300 transition-colors p-2 rounded-full hover:bg-white/5"
+                        className="text-violet-400 hover:text-violet-300 transition-colors p-2 rounded-full hover:bg-white/5"
                         aria-label="Scroll to about section"
                     >
                         <HiArrowDown size={32} />

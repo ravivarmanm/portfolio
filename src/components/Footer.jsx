@@ -39,11 +39,11 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="relative bg-dark-950 border-t border-white/10">
+        <footer className="relative bg-transparent border-t border-white/10">
             {/* Scroll to top button */}
             <button
                 onClick={scrollToTop}
-                className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform glow-primary"
+                className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform glow-primary"
                 aria-label="Scroll to top"
             >
                 <HiArrowUp className="text-xl" />
@@ -53,7 +53,7 @@ const Footer = () => {
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
                     {/* Brand */}
                     <div>
-                        <h3 className="text-2xl font-bold gradient-text-animated mb-4">
+                        <h3 className="text-2xl font-bold font-display gradient-text-animated mb-4">
                             &lt;Portfolio /&gt;
                         </h3>
                         <p className="text-gray-400 leading-relaxed">
@@ -64,13 +64,13 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-200 mb-4">Quick Links</h4>
+                        <h4 className="text-lg font-semibold font-display text-gray-200 mb-4">Quick Links</h4>
                         <ul className="space-y-2">
                             {quickLinks.map((link) => (
                                 <li key={link.id}>
                                     <button
                                         onClick={() => scrollToSection(link.id)}
-                                        className="text-gray-400 hover:text-primary-400 transition-colors"
+                                        className="text-gray-400 hover:text-violet-400 transition-colors"
                                     >
                                         {link.label}
                                     </button>
@@ -81,7 +81,7 @@ const Footer = () => {
 
                     {/* Social & Contact */}
                     <div>
-                        <h4 className="text-lg font-semibold text-gray-200 mb-4">Connect</h4>
+                        <h4 className="text-lg font-semibold font-display text-gray-200 mb-4">Connect</h4>
                         <div className="flex gap-4 mb-4">
                             {socialLinks.map((social) => (
                                 <a
@@ -89,7 +89,7 @@ const Footer = () => {
                                     href={social.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-primary-400 hover:glass-strong transition-all glow-hover-primary"
+                                    className="w-10 h-10 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-violet-400 hover:glass-strong transition-all glow-hover-primary"
                                     aria-label={social.label}
                                 >
                                     <social.icon className="text-lg" />
@@ -99,7 +99,7 @@ const Footer = () => {
                         <p className="text-gray-400 text-sm">
                             <a
                                 href="mailto:ravivarmanm@outlook.com"
-                                className="hover:text-primary-400 transition-colors"
+                                className="hover:text-violet-400 transition-colors"
                             >
                                 ravivarmanm@outlook.com
                             </a>
@@ -111,13 +111,13 @@ const Footer = () => {
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-sm flex items-center gap-2">
                         © {currentYear} Ravivarman. Made with{' '}
-                        <FaHeart className="text-red-500 animate-pulse" /> using React & Tailwind CSS
+                        <FaHeart className="text-violet-500 animate-pulse" /> using React & Tailwind CSS
                     </p>
                     <div className="flex gap-6 text-sm text-gray-500">
-                        <a href="#" className="hover:text-primary-400 transition-colors">
+                        <a href="#" className="hover:text-violet-400 transition-colors">
                             Privacy Policy
                         </a>
-                        <a href="#" className="hover:text-primary-400 transition-colors">
+                        <a href="#" className="hover:text-violet-400 transition-colors">
                             Terms of Service
                         </a>
                     </div>

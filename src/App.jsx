@@ -6,12 +6,14 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CanvasBackground from './components/CanvasBackground';
 
 function App() {
   return (
-    <div className="min-h-screen bg-dark-950 text-gray-100 scrollbar-custom">
+    <div className="min-h-screen bg-dark-950 text-gray-100 scrollbar-custom relative">
+      <CanvasBackground />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />

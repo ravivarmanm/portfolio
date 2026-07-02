@@ -1,6 +1,73 @@
 [
     {
         "id": 1,
+        "title": "StockMarketView",
+        "description": "Advanced stock analysis dashboard modeled after Tickertape. Features a Market Mood Index (MMI) gauge visualizer, 5-pillar scorecards (valuation, growth, profitability, entry point, red flags), checklist audits, and sector benchmarking.",
+        "image": "/projects/stockmarket.png",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "Express",
+            "Tailwind CSS",
+            "Playwright"
+        ],
+        "liveUrl": "https://stock-market-view-demo.vercel.app",
+        "githubUrl": "https://github.com/ravivarmanm/stock-analyser",
+        "featured": true
+    },
+    {
+        "id": 2,
+        "title": "JeevanTrust",
+        "description": "Enterprise-grade loan and insurance management monorepo dashboard. Engineered with Next.js web client, a shared core TypeScript business library, Zod validation, offline localStorage cache fallback, and Supabase backend integration.",
+        "image": "/projects/jeevantrust.png",
+        "technologies": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Supabase",
+            "Turborepo",
+            "Zod",
+            "Vitest"
+        ],
+        "liveUrl": "https://jeevan-trust-demo.vercel.app",
+        "githubUrl": "https://github.com/ravivarmanm/jeevanTrust",
+        "featured": true
+    },
+    {
+        "id": 3,
+        "title": "Equity Fund Tracker",
+        "description": "Building a financial dashboard with SIP calculator, fund comparison, and NAV performance visualization. Designing reusable component architecture and scalable state management for real-time financial data.",
+        "image": "/projects/equity.png",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "REST APIs",
+            "Tailwind CSS",
+            "Chart.js"
+        ],
+        "liveUrl": "https://equity-tracker-demo.vercel.app",
+        "githubUrl": "https://github.com/ravivarmanm/equity-fund-tracker",
+        "featured": false
+    },
+    {
+        "id": 4,
+        "title": "Chatbot UI",
+        "description": "Built a dynamic chatbot interface with real-time message rendering and conversational flow handling. Designed for extensibility — architected to plug into any AI/LLM backend (OpenAI, Claude API).",
+        "image": "/projects/chatbot.png",
+        "technologies": [
+            "React",
+            "JavaScript",
+            "API Integration",
+            "Tailwind CSS",
+            "Framer Motion"
+        ],
+        "liveUrl": "https://chatbot-ui-demo.vercel.app",
+        "githubUrl": "https://github.com/ravivarmanm/Chatbot-UI",
+        "featured": false
+    },
+    {
+        "id": 5,
         "title": "AI Nutrition Tracker",
         "description": "Smart calorie tracking app using Natural Language Processing. Simply type 'I ate an apple' to get real-time macro analysis via Python & CalorieNinjas API.",
         "image": "/projects/nutrition.jpg",
@@ -13,10 +80,10 @@
         ],
         "liveUrl": "https://food-database-demo.vercel.app",
         "githubUrl": "https://github.com/ravivarmanm/food-database",
-        "featured": true
+        "featured": false
     },
     {
-        "id": 2,
+        "id": 6,
         "title": "E-Commerce Platform",
         "description": "A full-stack e-commerce solution with product catalog, cart management, and secure payment processing.",
         "image": "/projects/ecommerce.jpg",
@@ -29,66 +96,6 @@
         ],
         "liveUrl": "https://ecommerce-demo.vercel.app",
         "githubUrl": "https://github.com/ravivarmanm/ECommerce",
-        "featured": true
-    },
-    {
-        "id": 3,
-        "title": "Room Cleaning Service",
-        "description": "On-demand service booking application for scheduling home cleaning. Features user profiles, booking history, and admin panel.",
-        "image": "/projects/cleaning.jpg",
-        "technologies": [
-            "React",
-            "Firebase",
-            "Tailwind CSS",
-            "Framer Motion"
-        ],
-        "liveUrl": "https://cleaning-service-demo.vercel.app",
-        "githubUrl": "https://github.com/ravivarmanm/Roomcleaningservices",
-        "featured": true
-    },
-    {
-        "id": 4,
-        "title": "Family Tracker App",
-        "description": "Mobile application for family safety tracking with real-time geolocation sharing and geofencing alerts.",
-        "image": "/projects/tracker.jpg",
-        "technologies": [
-            "React Native",
-            "Google Maps API",
-            "Firebase",
-            "Redux"
-        ],
-        "liveUrl": "https://play.google.com/store/apps/details?id=com.familytracker",
-        "githubUrl": "https://github.com/ravivarmanm/FamilyTrackerApp",
-        "featured": true
-    },
-    {
-        "id": 5,
-        "title": "Portfolio CMS",
-        "description": "Headless CMS for managing portfolio content with drag-and-drop interface and version control.",
-        "image": "/projects/cms.jpg",
-        "technologies": [
-            "Next.js",
-            "Strapi",
-            "GraphQL",
-            "AWS S3"
-        ],
-        "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/ravivarmanm/portfolio-cms",
-        "featured": false
-    },
-    {
-        "id": 6,
-        "title": "Fitness Tracker",
-        "description": "Mobile-responsive fitness tracking app with workout plans, progress charts, and social features.",
-        "image": "/projects/fitness.jpg",
-        "technologies": [
-            "React Native",
-            "Firebase",
-            "Redux",
-            "Chart.js"
-        ],
-        "liveUrl": "https://example.com",
-        "githubUrl": "https://github.com/ravivarmanm/fitness-tracker",
         "featured": false
     }
 ]
